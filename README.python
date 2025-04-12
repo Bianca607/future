@@ -1,4 +1,92 @@
-#future
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+        <title>LOGIN</title>
+        <style>
+            body{
+                font-family:Arial, Helvetica, sans-serif;
+                background-image: linear-gradient(45deg, cyan, yellow ) ;
+            }
+            div{
+                background-color: rgba(0, 0,0,0.9);
+                position: absolute;
+                top: -20%;
+                left: 50%;
+                transform: translate(-50%, 50%);
+                padding: 80px;
+                border-radius: 15px;
+                color: white;
+
+            }
+            input{
+                padding: 15px;
+                border: none;
+                outline: none;
+                font-size: 15px;
+            }
+            button{
+                background-color: dodgerblue;
+                border: none;
+                padding: 15px;
+                width: 100%;
+                border-radius: 10px;
+                font-size: 15px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="login">            
+                <h1>LOGIN</h1>
+                <input type="text" placeholder="username" required>
+                <br> <br>
+                <input type="password" placeholder="password" required>
+                <br> <br>
+                <button type="submit">LOGIN</button>
+                <br> <br>
+                <a class="botao-ir-cadastro" href="#">NÃO TENHO CONTA</a>
+            
+        </div>
+        <div id="cadastro">
+            <h2>Cadastro</h2>
+            <input type="text" placeholder="Usuario"> <br> <br>
+            <input type="email" placeholder="Email"> <br> <br>
+            <input type="password" placeholder="Senha"> <br> <br>
+            <input type="password" placeholder="Confirmar Senha"> <br> <br>
+            <p>Gênero</p>
+            <input type="radio" placeholder="masculino">Masculino
+            <input type="radio" placeholder="feminino">Feminino <br> <br>
+            <button type="submit">Cadastrar</button> <br><br>
+            <a class="botao-ir-login" href="#">Já tenho cadastro</a>
+        </div>
+        <script>
+            $(document).ready(function(){
+                $("#login").show();
+                $("#cadastro").hide();
+                $("#inicio") .hide();
+        });
+        $(".botao-ir-cadastro").click(function(){
+             $("#login").hide(function(){
+                $("#login").slideUp();
+            });
+            
+             $("#cadastro").show(function(){
+                $("#login").slideUp();
+            });
+        });
+        $(".botao-ir-login").click(function(){
+             $("#login").show(function(){
+                $("#login").slideDown();
+            });
+            
+             $("#cadastro").hide(function(){
+                $("#login").slideDown();
+            });
+        });
+        </script>
+    </body>
+</html>
 
 
 
